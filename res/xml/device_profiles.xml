@@ -19,6 +19,7 @@
 
     <grid-option
         launcher:name="2_by_2"
+        launcher:gridIconId="@drawable/grid_preview_2_by_2"
         launcher:numRows="2"
         launcher:numColumns="2"
         launcher:numAllAppsColumns="4"
@@ -57,6 +58,7 @@
 
     <grid-option
         launcher:name="3_by_3"
+        launcher:gridIconId="@drawable/grid_preview_3_by_3"
         launcher:numRows="3"
         launcher:numColumns="3"
         launcher:numAllAppsColumns="4"
@@ -95,6 +97,7 @@
 
     <grid-option
         launcher:name="4_by_5"
+        launcher:gridIconId="@drawable/grid_preview_4_by_5"
         launcher:numRows="5"
         launcher:numColumns="4"
         launcher:numFolderRows="3"
@@ -170,6 +173,7 @@
 
     <grid-option
         launcher:name="5_by_5"
+        launcher:gridIconId="@drawable/grid_preview_5_by_5"
         launcher:numRows="5"
         launcher:numColumns="5"
         launcher:numFolderRows="4"
@@ -221,6 +225,7 @@
 
     <grid-option
         launcher:name="5_by_6"
+        launcher:gridIconId="@drawable/grid_preview_5_by_6"
         launcher:numRows="6"
         launcher:numColumns="5"
         launcher:numFolderRows="5"
@@ -246,6 +251,7 @@
 
     <grid-option
         launcher:name="5_by_7"
+        launcher:gridIconId="@drawable/grid_preview_5_by_7"
         launcher:numRows="7"
         launcher:numColumns="5"
         launcher:numFolderRows="6"
@@ -271,6 +277,7 @@
 
     <grid-option
         launcher:name="6_by_5"
+        launcher:gridIconId="@drawable/grid_preview_6_by_5"
         launcher:numRows="5"
         launcher:numColumns="6"
         launcher:numSearchContainerColumns="3"
@@ -320,6 +327,7 @@
 
     <grid-option
         launcher:name="desktop_6_by_5"
+        launcher:gridIconId="@drawable/grid_preview_6_by_5"
         launcher:numRows="5"
         launcher:numColumns="6"
         launcher:numSearchContainerColumns="3"
@@ -367,6 +375,7 @@
 
     <grid-option
         launcher:name="6_by_6"
+        launcher:gridIconId="@drawable/grid_preview_6_by_6"
         launcher:numRows="6"
         launcher:numColumns="6"
         launcher:numFolderRows="5"
@@ -392,6 +401,7 @@
 
     <grid-option
         launcher:name="fixed_landscape_mode"
+        launcher:gridIconId="@drawable/grid_preview_8_by_3"
         launcher:numFolderRows="2"
         launcher:numFolderColumns="3"
         launcher:numFolderRowsLandscape="2"
