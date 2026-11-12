@@ -333,6 +333,12 @@ public class Launcher extends StatefulActivity<LauncherState>
 
     private final int[] mTmpAddItemCellCoordinates = new int[2];
 
+    // Grid dimensions the current activity/view was created with. When the IDP grid
+    // changes (e.g. from Wallpaper & style) the existing CellLayout keeps its old
+    // mCountX/mCountY, so the activity has to be rebuilt with the new DeviceProfile.
+    private int mLastGridColumns = -1;
+    private int mLastGridRows = -1;
+
     @Thunk
     Hotseat mHotseat;
 
@@ -434,6 +440,8 @@ public class Launcher extends StatefulActivity<LauncherState>
         mRotationHelper = new RotationHelper(this);
         InvariantDeviceProfile idp = app.getInvariantDeviceProfile();
         initDeviceProfile(idp);
+        mLastGridColumns = idp.numColumns;
+        mLastGridRows = idp.numRows;
         idp.addOnChangeListener(this);
         mSharedPrefs = LauncherPrefs.getPrefs(this);
         mAccessibilityDelegate = createAccessibilityDelegate();
@@ -636,6 +644,16 @@ public class Launcher extends StatefulActivity<LauncherState>
 
     @Override
     public void onIdpChanged(boolean modelPropertiesChanged) {
+        final int newColumns = mDeviceProfile.inv.numColumns;
+        final int newRows = mDeviceProfile.inv.numRows;
+        if (newColumns != mLastGridColumns || newRows != mLastGridRows) {
+            mLastGridColumns = newColumns;
+            mLastGridRows = newRows;
+            // Rebuild the activity so the workspace CellLayout picks up the new
+            // column/row counts instead of keeping the previous grid.
+            recreate();
+            return;
+        }
         onHandleConfigurationChanged();
     }
 
