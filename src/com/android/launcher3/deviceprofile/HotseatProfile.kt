@@ -164,6 +164,16 @@ data class HotseatProfile(
                     numShownHotseatIconsParam,
                 )
             }
+            // Phones keep the stock AOSP hotseat count. Only large-screen layouts use the
+            // natural-width dock; otherwise the dock stays at the previous fixed count while
+            // the workspace grid changes, and items past that count fail to bind.
+            if (!deviceProperties.isLargeScreen) {
+                return recalculateGridHotseat(
+                    inv, hotseatProfileInitialValues, workspaceProfile, deviceProperties,
+                    panelCount, isScalableGrid, isVerticalBarLayout = false,
+                    numShownHotseatIconsParam,
+                )
+            }
             // The bottom dock has no fixed icon count: it shows as many pinned apps as the
             // screen width fits at the current icon size, leaving room for recent apps, up to
             // what the database holds.
